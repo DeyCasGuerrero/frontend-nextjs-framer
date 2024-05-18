@@ -1,9 +1,7 @@
-'use client';
-
 import Image from "next/image"
 import SliderSwiper from "../slider/Slider"
 import { slides } from "@/utils/Imgs"
-import {motion} from "framer-motion"
+
 
 interface ImageProps{
     index?: number,

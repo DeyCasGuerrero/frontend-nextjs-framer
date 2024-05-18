@@ -1,15 +1,29 @@
-import {motion} from "framer-motion";
-
-interface CardsInfoProps{
-    text:string;
-    title:string;
+'use client';
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import SpotifyIcon from "../icons/SpotifyIcon";
+interface CardsInfoProps {
+    text: string;
+    title: string;
 }
 
-function CardsInformation({text, title}:CardsInfoProps) {
+function CardsInformation({ text, title }: CardsInfoProps) {
+
+    const ref = useRef(null);
+    const isInView=useInView(ref, {once:true} )
 
     return (
-        <div className="relative flex w-96 flex-col h-60 rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+        <motion.div
+            ref={ref}
+            initial={{ opacity: 0, scale:0.3}}
+            animate={isInView?{ opacity: 1, scale:1 }:{opacity:0, scale:0.3}}
+            transition={{ duration: 0.8 }}
+            className="relative flex w-96 flex-col h-60 rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+        >
             <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-green-300 to-green-500">
+                <div className="flex justify-end">
+                    <SpotifyIcon size={100} color="#fff"></SpotifyIcon>
+                </div>
             </div>
             <div className="p-6">
                 <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
@@ -24,7 +38,7 @@ function CardsInformation({text, title}:CardsInfoProps) {
                     Read More
                 </button>
             </div>
-        </div>
+        </motion.div>
     )
 
 }

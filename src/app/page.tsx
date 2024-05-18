@@ -1,6 +1,6 @@
 import CardComponent from "@/components/common/Card";
-import Footer from "@/components/common/Footer";
-import ImagenComponent from "@/components/img/Imagen";
+import Footer from "@/components/sections/Footer";
+import ImagenComponent from "@/components/img/ImagenMap";
 import InformationSection from "@/components/sections/SectionInfomation";
 import Slogan from "@/components/sections/SectionSlogan";
 import {motion, useScroll } from "framer-motion"

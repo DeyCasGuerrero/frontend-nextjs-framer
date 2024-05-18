@@ -1,6 +1,5 @@
-
 import CardsInformation from "../common/CardsInformation"
-import ImagenComponent from "../img/Imagen"
+import ImagenComponent from "../img/ImagenMap"
 import { text } from "@/utils/textCards"
 
 

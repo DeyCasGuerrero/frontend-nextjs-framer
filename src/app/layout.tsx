@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/NavBar/Navbar";
-const inter = Inter({ subsets: ["latin"] });
+import { Roboto } from "next/font/google";
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight:'700'
+});
 
 export const metadata: Metadata = {
   title: "FindSpotify",
@@ -16,8 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}> 
-        <Navbar/>
+      <body className={roboto.className}>
+        <Navbar />
         {children}
       </body>
     </html>
