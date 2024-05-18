@@ -6,8 +6,7 @@ export function useScriptClient(){
 
     const handleScroll=()=>{
         const scrollY= window.scrollY;
-
-        if(scrollY>100){
+        if(scrollY > 100){
             setScroll(true);
         }else{
             setScroll(false)
@@ -15,12 +14,13 @@ export function useScriptClient(){
     }
 
     useEffect(()=>{
+        handleScroll();
         window.addEventListener('scroll', handleScroll);
         return ()=>{
             window.removeEventListener('scroll', handleScroll);
         }
 
-    },[scroll])
+    },[])
 
     return{
         scroll,

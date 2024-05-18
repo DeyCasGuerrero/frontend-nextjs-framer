@@ -1,5 +1,5 @@
-"use client"
-import { useState, useEffect } from 'react';
+'use client';
+
 import Link from 'next/link';
 import SpotifyIcon from '@/components/icons/SpotifyIcon'; 
 import { useScriptClient } from '@/hooks/useScriptClient';
@@ -10,9 +10,10 @@ const Header = () => {
     
 
     return (
-        <header className="w-full flex justify-center sticky top-0 z-10 overflow-hidden">
+        
             <nav
-                className={`bg-black flex items-center p-3 justify-between rounded-3xl transition-all duration-1000 ${scroll ? 'w-[100rem] bg-transparent shadow-2xl' : 'w-full'}`}
+                className={`bg-black flex items-center z-10 p-3 justify-between overflow-hidden rounded-3xl top-0 sticky transition-all duration-1000 ${scroll ? 'w-[80rem] bg-transparent shadow-2xl' : 'w-full'}`}
+                style={{ margin: '0 auto' }}
             >
                 <SpotifyIcon width={60} height={60} />
 
@@ -30,7 +31,7 @@ const Header = () => {
                     </Link>
                 </div>
             </nav>
-        </header>
+        
     );
 };
 

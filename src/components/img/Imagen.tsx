@@ -1,18 +1,61 @@
+'use client';
+
 import Image from "next/image"
-export default function ImagenComponent() {
+import SliderSwiper from "../slider/Slider"
+import { slides } from "@/utils/Imgs"
+import {motion} from "framer-motion"
+
+interface ImageProps{
+    index?: number,
+    withprop:number,
+}
+
+export default function ImagenComponent({ index, withprop}: ImageProps) {
+
+    const renderSlide = () => {
+        if (index!==null && index !== undefined) {
+            return (
+                <SliderSwiper  key={index }>
+                    <Image
+                        src={slides[index]}
+                        alt="fondo"
+                        width={withprop}
+                        height={0}
+                        quality={100}
+                        style={{
+                            objectFit: 'cover',
+                        }}
+                    />
+                </SliderSwiper>
+            )
+
+        }
+        else {
+            return (
+                <>
+                    {slides.map((slide, index) => (
+
+                        <SliderSwiper key={index}>
+                            <Image
+                                src={slide}
+                                alt="fondo"
+                                width={700}
+                                height={0}
+                                quality={100}
+                                style={{
+                                    objectFit: 'cover',
+                                }}
+                            />
+                        </SliderSwiper>
+                    ))}
+                </>
+            )
+        }
+    }
+
     return (
-        <div className="border-8 border-slate-200 shadow-2xl">
-            <Image
-                src="https://i.postimg.cc/BQCxwqcG/fondo.webp"
-                alt="fondo"
-                width={600}
-                height={0}
-                quality={100}
-                sizes="100vw"
-                style={{
-                    objectFit: 'cover',
-                }}
-            />
-        </div>
+        <div className="flex flex-row">
+            {renderSlide()}
+        </div >
     )
 }
