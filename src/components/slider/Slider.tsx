@@ -14,8 +14,7 @@ function SliderSwiper({ children }: { children: ReactNode }) {
             <motion.div
                 className="flex border-8 border-slate-200 shadow-2xl"
                 initial={{ opacity: 0, x: -100 }}
-                animate={isInView ?{ opacity:  1 , x: 20}:{opacity:0, x:-100}}
-
+                animate={isInView ?{ opacity:  1 , x: 0}:{opacity:0, x:-100}}                
                 exit={{ opacity: 0 }}
                 transition={{
                     duration: 0.6

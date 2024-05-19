@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export function useScriptClient(){
 
+
     const [scroll, setScroll]=useState<boolean>();
+    const [inputValue, setInputValue] = useState<string>('');
 
     const handleScroll=()=>{
         const scrollY= window.scrollY;
@@ -22,7 +24,29 @@ export function useScriptClient(){
 
     },[])
 
+    
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValue(e.target.value);
+    };
+
+    const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            if (inputValue.trim() !== '') {
+            } else {
+                alert("El valor es vacío");
+            }
+        }
+    };
+
+    useEffect(() => {
+        console.log(inputValue);
+    }, [inputValue]);
+
     return{
         scroll,
+        handleInputChange,
+        inputValue,
+        handleKeyDown,
     }
 }

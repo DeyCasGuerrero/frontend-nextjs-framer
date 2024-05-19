@@ -1,5 +1,5 @@
 import Image from "next/image"
-import SliderSwiper from "../slider/Slider"
+import SliderSwiper from "../Slider"
 import { slides } from "@/utils/Imgs"
 
 
@@ -18,11 +18,12 @@ export default function ImagenComponent({ index, withprop}: ImageProps) {
                         src={slides[index]}
                         alt="fondo"
                         width={withprop}
-                        height={0}
+                        height={100}
                         quality={100}
                         style={{
                             objectFit: 'cover',
                         }}
+                        className="max-sm:w-80"
                     />
                 </SliderSwiper>
             )
@@ -38,7 +39,7 @@ export default function ImagenComponent({ index, withprop}: ImageProps) {
                                 src={slide}
                                 alt="fondo"
                                 width={700}
-                                height={0}
+                                height={700}
                                 quality={100}
                                 style={{
                                     objectFit: 'cover',

@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 export default function CardComponent() {
     return (
         <motion.div
-            className="box h-[20em] w-[35em] shadow-2xl bg-white m-auto rounded-[1em] overflow-hidden relative group p-2 z-0"
+            className="box h-[20em] w-[35em] max-sm:w-80 shadow-2xl bg-white m-auto rounded-[1em] overflow-hidden relative group p-2 z-0"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -23,7 +23,7 @@ export default function CardComponent() {
                 CARD
             </h1>
 
-            <p className="text-justify text-black font-bold group-hover:text-white duration-500 text-xl p-10">Explora y descubre canciones a través de la API de Spotify, accediendo a muchas pistas y crea tus propias listas personalizadas. 🤑🎵🎸🎸</p>
+            <p className="text-ellipsis text-black font-mono group-hover:text-white duration-500 text-xl p-10">Explora y descubre canciones, accediendo a muchas pistas y crea tus propias listas personalizadas. 🤑🎵🎸🎸</p>
         </motion.div>
 
     )
