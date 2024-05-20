@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <>
             <hr className="border-t-2 border-white" />
-            <footer className="bg-gradient-to-t from-green-400 to-green-200 text-white py-8">
+            <footer className="bg-gradient-to-t from-green-400 to-green-200 text-white py-8 overflow-hidden">
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
                     <div className="md:w-1/3">
                         <h3 className="text-2xl font-bold mb-4 text-black">Contáctanos</h3>

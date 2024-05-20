@@ -20,7 +20,7 @@ function Header() {
 
     return (
         <motion.nav
-            className={`bg-black flex max-lg:rounded-none items-center z-10 p-3 justify-between overflow-hidden rounded-3xl top-0 sticky transition-all duration-1000 ${isClick ? 'fixed  inset-0 z-50 flex-col justify-start h-screen' : ''} ${scroll ? 'max-xl:w-full w-4/5 bg-transparent shadow-2xl' : 'w-full'}`}
+            className={`bg-black flex max-lg:rounded-none items-center z-10 p-3 justify-between overflow-hidden rounded-3xl top-0 sticky transition-all duration-1000 ${isClick ? 'fixed  inset-0 max-lg:bg-black z-50 flex-col justify-start h-screen' : ''} ${scroll ? 'max-xl:w-full w-4/5 bg-transparent shadow-2xl' : 'w-full'}`}
             style={{ margin: '0 auto' }}
             initial={isClick ? { opacity: 0, x: -300 } : {}}
             animate={isClick ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
@@ -30,7 +30,7 @@ function Header() {
                 <SpotifyIcon width={60} height={60} />
             </Link>
 
-            <div className={`max-lg:hidden flex text-white gap-8 lowercase font-bold text-lg w-1/2 justify-around `}>
+            <div className={`max-lg:hidden flex text-white gap-8 lowercase font-bold tracking-widest w-1/2 justify-around `}>
                 <ItemsNavbar scroll={scroll} txtColor='text-green-500' txtColorhover='hover:text-black' ></ItemsNavbar>
             </div>
 

@@ -1,7 +1,6 @@
 'use client';
 import { motion, useInView } from "framer-motion";
 import { useScriptClient } from "@/hooks/useScriptClient";
-import { useRef } from "react";
 import ButtonClient from "../common/Button";
 
 export default function Slogan() {

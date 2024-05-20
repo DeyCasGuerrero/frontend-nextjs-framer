@@ -1,6 +1,5 @@
 
 import Link from "next/link"
-import { useState } from "react";
 
 interface NavProps {
     txtColorhover: string;

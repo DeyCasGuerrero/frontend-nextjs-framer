@@ -1,5 +1,4 @@
 import InputSearch from "@/components/common/InputSearch";
-import { ApiTypes } from "@/types/ApiTypes";
 
 async function SearchPage() {
 

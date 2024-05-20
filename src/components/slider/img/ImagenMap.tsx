@@ -13,11 +13,13 @@ export default function ImagenComponent({ index, withprop}: ImageProps) {
     const renderSlide = () => {
         if (index!==null && index !== undefined) {
             return (
-                <SliderSwiper  key={index }>
+                <SliderSwiper  key={index}>
                     <Image
                         src={slides[index]}
                         alt="fondo"
                         width={withprop}
+                        priority={false}
+                        placeholder = 'empty' 
                         height={100}
                         quality={100}
                         style={{
@@ -39,6 +41,8 @@ export default function ImagenComponent({ index, withprop}: ImageProps) {
                                 src={slide}
                                 alt="fondo"
                                 width={700}
+                                priority={false}
+                                placeholder = 'empty' 
                                 height={700}
                                 quality={100}
                                 style={{

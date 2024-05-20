@@ -1,6 +1,7 @@
+import AboutSection from "@/components/sections/AboutSection";
 
-export default function AboutUs(){
-    return(
-        <h1>HOLA DESDE NOSTROS</h1>
+export default function AboutUs() {
+    return (
+        <AboutSection />
     )
 }

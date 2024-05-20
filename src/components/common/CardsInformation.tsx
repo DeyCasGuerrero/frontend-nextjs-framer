@@ -2,6 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import SpotifyIcon from "../icons/SpotifyIcon";
+
 interface CardsInfoProps {
     text: string;
     title: string;
